@@ -1,8 +1,32 @@
 {
   "version": 2,
-  "dgSpecHash": "1XFMQLy9cLqaaEAo0IcU7IhHQzIUZ6e6SPzmDYy6MHS1ZUMVBHPXE99jMjwWYgU8u4Xi7jHhIWDO1VgZldC9rQ==",
+  "dgSpecHash": "BZDjlCqQ3ptirI3gMXTDPfVtF/xeDquEDoHQryEs50O2EQUqJJE7bswzXqPeMrLaXw1xt1AOSB2kSu3NN/KZFQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\OdinPT\\Desktop\\ReturnDataFromPDF\\ReturnDataFromPDF\\ReturnDataFromPDF.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\OdinPT\\.nuget\\packages\\itextsharp\\5.5.13.1\\itextsharp.5.5.13.1.nupkg.sha512",
+    "C:\\Users\\OdinPT\\.nuget\\packages\\pdfsharp\\1.50.5147\\pdfsharp.1.50.5147.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'iTextSharp 5.5.13.1' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "iTextSharp",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'PDFsharp 1.50.5147' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v3.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "PDFsharp",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }
