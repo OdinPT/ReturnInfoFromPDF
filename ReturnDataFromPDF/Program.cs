@@ -40,7 +40,9 @@ namespace ReturnDataFromPDF
                 }
             }
 
-            string path = @"C:\Users\OdinPT\Desktop\hereIAm.txt";
+            //string path = @"C:\Users\OdinPT\Desktop\hereIAm.txt";
+            String path = @"..\..\..\teste.txt";
+
             if (!File.Exists(path))
             {
                 // Create a file to write to.
