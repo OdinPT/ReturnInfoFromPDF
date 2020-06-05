@@ -14,7 +14,7 @@ namespace ReturnDataFromPDF
 {
     class Program
     {
-       
+
         public static string ReadDATAFromPDF(string fileName, string path)
         {
             StringBuilder sb = new StringBuilder();
@@ -30,91 +30,62 @@ namespace ReturnDataFromPDF
                 {
                     strategy = new FilteredTextRenderListener(new LocationTextExtractionStrategy(), filter);
                     sb.AppendLine(PdfTextExtractor.GetTextFromPage(reader, i, strategy));
-  
+
                 }
             }
-            MakeTempFile(sb, path); 
+            MakeTempFile(sb, path);
             return sb.ToString();
         }
 
-        //gera ficheiro com todo o texto do pdf
+        //make file with all data from pdf file 
         public static void MakeTempFile(StringBuilder s, string path)
         {
-            // Create a file to write to.
             using StreamWriter sw = File.CreateText(path);
-
             sw.WriteLine(s.ToString());
-            
+
         }
 
-        public static void FirstLines(string path, string end)
+        public static void FirstLines(string path)
         {
             List<Pessoa> pessoas;
 
             string[] lines = System.IO.File.ReadAllLines(path);
-            using StreamWriter sw = File.CreateText(end);
 
             string word = lines[0];
 
-            // retira as 2 palavras antes do nome
             int x = word.IndexOf(" ") + 1;
             string str = word.Substring(x);
             int z = str.IndexOf(" ") + 1;
             string nome = str.Substring(z);
 
-            // escreve o nome no ficheiro
-            sw.WriteLine(nome);
+            pessoas = new List<Pessoa>();
 
-            // add  values to class pessoa
-            pessoas   = new List<Pessoa>();
             Pessoa emp3 = new Pessoa(nome, lines[2], lines[4]);
             pessoas.Add(emp3);
+
+            Console.WriteLine(emp3.ToString());
             
         }
 
-        //Só nome, email e numero do telemóvel
         public static void Main(string[] args)
         {
-
-            List<Pessoa> pessoas;
-
-            //Console.WriteLine("Hello World!");
-
             //directory scan file and pdf to read
             string target = @"C:\Users\OdinPT\Desktop\";
-            string file = @"joana.pdf";
-            //string file = @"cv_eng.pdf";
 
+            List<Pessoa> pessoas;
 
             //directory file with  all data
             String path = @"..\..\..\temp.txt";
 
-            //directory file with  name. number and email from cv
-            String end = @"..\..\..\DataFromPDF.txt";
-
-            //read from pdf and write in txt temp file
-            ReadDATAFromPDF(target + file, path);
+            //string file = @"joana.pdf";
+            string file = @"lv.pdf";
             
+            ReadDATAFromPDF(target + file, path);
+            FirstLines(path);
 
-            FirstLines(path, end);
-
+            //delete file with all pdf data
             //File.Delete(path);
-
-            //pessoas = new List<Pessoa>();
-
-            //for (int i = 2; i <= 4; i++)
-            //{
-            //    Console.WriteLine("\n\n");
-            //    Pessoa emp3 = new Pessoa(" Joã XX ", "1111111111", "1222222");
-            //    //pessoas.Add(emp3);
-
-            //    Console.WriteLine(emp3.ToString());
-
-
-            //}
-
 
         }
     }
 }
-
