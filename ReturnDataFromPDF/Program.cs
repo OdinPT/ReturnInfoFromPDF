@@ -84,7 +84,7 @@ namespace ReturnDataFromPDF
             FirstLines(path);
 
             //delete file with all pdf data
-            //File.Delete(path);
+            File.Delete(path);
 
         }
     }
